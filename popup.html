@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video DownloadHelper</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Video DownloadHelper</h1>
+            <p class="subtitle">Phát hiện video trên trang web</p>
+        </header>
+        
+        <main>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Đang quét video...</p>
+            </div>
+            
+            <div id="no-videos" class="message" style="display: none;">
+                <p>Không tìm thấy video nào trên trang này</p>
+                <small>Chỉ hỗ trợ video với thẻ &lt;video&gt; trực tiếp</small>
+            </div>
+            
+            <div id="videos-list" class="videos-container" style="display: none;">
+                <h3>Video tìm thấy:</h3>
+                <ul id="video-items" class="video-list">
+                    <!-- Video items will be populated here -->
+                </ul>
+            </div>
+            
+            <div id="error" class="message error" style="display: none;">
+                <p>Có lỗi xảy ra khi quét video</p>
+                <small id="error-details"></small>
+            </div>
+        </main>
+        
+        <footer>
+            <button id="refresh-btn" class="btn secondary">Quét lại</button>
+            <div class="legal-notice">
+                <small>Chỉ tải video bạn có quyền sử dụng</small>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

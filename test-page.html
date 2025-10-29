@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page - Video DownloadHelper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .video-container {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        video {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #007cba;
+            padding-bottom: 10px;
+        }
+        .info {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎬 Test Page cho Video DownloadHelper</h1>
+    
+    <div class="info">
+        <strong>Hướng dẫn test:</strong>
+        <ol>
+            <li>Mở Chrome Extensions (chrome://extensions/)</li>
+            <li>Bật Developer mode</li>
+            <li>Load unpacked extension từ thư mục Video DownloadHelper</li>
+            <li>Quay lại trang này và click vào icon extension</li>
+            <li>Extension sẽ tự động quét và hiển thị video có thể tải</li>
+        </ol>
+    </div>
+
+    <div class="video-container">
+        <h2>Video 1: Direct src attribute</h2>
+        <video controls>
+            <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p><strong>Loại:</strong> Video với thẻ source</p>
+        <p><strong>URL:</strong> https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4</p>
+    </div>
+
+    <div class="video-container">
+        <h2>Video 2: Direct video src</h2>
+        <video controls src="https://sample-videos.com/zip/10/mp4/SampleVideo_640x360_1mb.mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p><strong>Loại:</strong> Video với src trực tiếp</p>
+        <p><strong>URL:</strong> https://sample-videos.com/zip/10/mp4/SampleVideo_640x360_1mb.mp4</p>
+    </div>
+
+    <div class="video-container">
+        <h2>Video 3: Multiple sources</h2>
+        <video controls>
+            <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_720x480_1mb.mp4" type="video/mp4">
+            <source src="https://sample-videos.com/zip/10/webm/SampleVideo_720x480_1mb.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <p><strong>Loại:</strong> Video với nhiều source</p>
+        <p><strong>URLs:</strong> MP4 và WebM</p>
+    </div>
+
+    <div class="info">
+        <strong>⚠️ Lưu ý:</strong>
+        <ul>
+            <li>Các video test này từ sample-videos.com (miễn phí)</li>
+            <li>Extension chỉ phát hiện video có thẻ &lt;video&gt; với src hoặc &lt;source&gt;</li>
+            <li>Không hỗ trợ Blob URLs, HLS/DASH streaming</li>
+            <li>Chỉ sử dụng cho nội dung bạn có quyền tải xuống</li>
+        </ul>
+    </div>
+
+    <script>
+        console.log('Test page loaded');
+        console.log('Videos found:', document.querySelectorAll('video').length);
+        
+        // Log video elements for debugging
+        document.querySelectorAll('video').forEach((video, index) => {
+            console.log(`Video ${index + 1}:`, {
+                src: video.src,
+                sources: Array.from(video.querySelectorAll('source')).map(s => s.src)
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+# Memory Bank - Internal project context (không commit)
+memory-bank/
+
+# Node modules (nếu sử dụng npm)
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.temp
+
+# Chrome extension development
+*.crx
+*.pem
+
+# Backup files
+*.bak
+*.backup
+
+# Test files (nếu có)
+test-results/
+coverage/
